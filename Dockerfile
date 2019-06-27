@@ -8,4 +8,6 @@ WORKDIR /app
 COPY . ./
 RUN gem install bundler && bundle install
 
-CMD ["bundle", "ruby", "main.rb"]
+EXPOSE 4567
+
+CMD ["bundle", "exec", "ruby", "main.rb"]

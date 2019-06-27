@@ -5,9 +5,7 @@ RUN mkdir -p /app
 
 WORKDIR /app
 
-COPY Gemfile Gemfile.lock ./
+COPY . ./
 RUN gem install bundler && bundle install
-
-COPY . .
 
 CMD ["bundle", "ruby", "main.rb"]
